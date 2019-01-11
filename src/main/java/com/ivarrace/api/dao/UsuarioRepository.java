@@ -1,0 +1,12 @@
+package com.ivarrace.api.dao;
+
+import com.ivarrace.api.model.Usuario;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UsuarioRepository extends MongoRepository<Usuario, String> {
+    Optional<Usuario> findByAlias(String alias);
+}
